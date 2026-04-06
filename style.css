@@ -555,20 +555,21 @@ footer {
 /* Mobile Nav */
 .mobile-nav {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
     background: var(--glass);
-    backdrop-filter: blur(20px);
-    height: 70px;
+    backdrop-filter: blur(25px);
+    height: 75px;
     display: none;
     justify-content: space-around;
     align-items: center;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.05);
     z-index: 2000;
     padding: 0 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px 25px 0 0;
+    /* Rounded top for app feel */
 }
 
 .nav-item {
@@ -577,12 +578,14 @@ footer {
     align-items: center;
     text-decoration: none;
     color: var(--text-gray);
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 0.65rem;
+    font-weight: 700;
+    transition: var(--transition);
+    flex: 1;
 }
 
 .nav-item i {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 4px;
 }
 
@@ -591,19 +594,21 @@ footer {
 }
 
 .nav-item.order {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     color: var(--white);
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     justify-content: center;
-    margin-top: -30px;
-    border: 5px solid var(--background);
-    box-shadow: 0 5px 15px rgba(255, 107, 155, 0.4);
+    margin-top: -45px;
+    border: 6px solid var(--background);
+    box-shadow: 0 8px 20px rgba(255, 107, 155, 0.4);
+    flex: 0 0 65px;
 }
 
 .nav-item.order i {
     margin-bottom: 0;
+    font-size: 1.5rem;
 }
 
 .nav-item.order span {
@@ -629,41 +634,54 @@ footer {
     }
 
     .hero {
-        padding: 120px 0 60px;
+        padding: 100px 0 60px;
         text-align: center;
     }
 
     .hero .container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
 
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 
     .hero p {
-        margin: 0 auto 30px;
+        margin: 0 auto 24px;
+        font-size: 1.1rem;
     }
 
     .hero-btns {
         justify-content: center;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .features .container {
         grid-template-columns: 1fr;
+        padding: 30px 20px;
     }
 
     .section-header h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        padding: 30px;
     }
 
     .location-wrapper {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .location-info h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         text-align: center;
     }
 
@@ -671,6 +689,21 @@ footer {
         flex-direction: column;
         gap: 20px;
         text-align: center;
-        padding-bottom: 100px;
+        padding-bottom: 110px;
+        /* Extra space for bottom nav */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 0 20px;
     }
 }
